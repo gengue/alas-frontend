@@ -1,0 +1,43 @@
+
+<div layout="column" layout-align="center center" layout-fill>
+  <div class="Login-box md-whiteframe-z1" layout="column">
+    <form ng-submit="loginCtrl.login()">
+      <md-toolbar>
+        <h2 class="md-toolbar-tools"><span>Login</span></h2>
+      </md-toolbar>
+      <md-content class="md-padding" layout="column">
+        <md-input-container>
+          <label>Usuario</label>
+          <input type="text" ng-model="loginCtrl.user.username">
+        </md-input-container>
+        <md-input-container>
+          <label>Contraseña</label>
+          <input type="password" ng-model="loginCtrl.user.password">
+        </md-input-container>
+
+        <div layout="row" layout-align="center" ng-if="loginCtrl.busy">
+          <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+
+        <ul class="no-uldots" ng-if="loginCtrl.errors">
+          <li ng-repeat="error in loginCtrl.errors" class="Login-has-error">
+            <label>
+              <i class="material-icons">error</i>{{ error }} 
+            </label>
+          </li>
+        </ul>
+
+        <div layout="row" layout-align="center center" style="padding-top:20px;">
+          <md-button class="md-raised md-primary" type="submit" 
+            ng-disabled="loginCtrl.busy">Entrar</md-button>
+          <div flex></div>
+          <md-button href="" md-no-link>Olvide mi contraseña</md-button>
+        </div>
+      </md-content>
+    </form>
+  </div>
+
+  <footer>
+    <p>Powered by <a href="http://www.polymer-project.org/" target="_blank">The3ballsoft</a></p>
+  </footer>
+</div>

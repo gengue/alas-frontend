@@ -1,0 +1,116 @@
+<div layout="column" class="Tariff-panel">
+  <md-toolbar class="md-whiteframe-1dp" ng-if="ctrl.heading">
+    <div class="md-toolbar-tools">
+      <md-menu>
+        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+          <ng-md-icon md-menu-origin icon="more_vert" style="fill: white"></ng-md-icon>
+        </md-button>
+        <md-menu-content width="3">
+          <md-menu-item>
+            <md-button>
+              <ng-md-icon icon="assignment" md-menu-align-target></ng-md-icon>&nbsp;
+                Reporte pdf 
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button>
+              <ng-md-icon icon="{{ !ctrl.heading.isFav ? 'favorite' : 'delete'}}" md-menu-align-target></ng-md-icon>&nbsp;
+                <span ng-if="!ctrl.heading.isFav">Agregar a favoritos</span>
+                <span ng-if="ctrl.heading.isFav">Quitar de favoritos</span>
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <h2>
+        <span>{{ ctrl.heading.code }} - {{ ctrl.heading.title }}</span>
+      </h2>
+
+      <span flex></span>
+
+      <!--<md-button class="md-icon-button">-->
+        <!--<md-tooltip md-direction="top">Agregar a favoritos</md-tooltip>-->
+        <!--<ng-md-icon icon="favorite" style="fill: {{ ctrl.heading.isFav ? 'white' : '#b2b9e1' }}"></ng-md-icon> -->
+      <!--</md-button>-->
+      <md-button class="md-icon-button" ng-if="ctrl.expand" ng-click="ctrl.expand=false">
+        <md-tooltip md-direction="top">Minimizar</md-tooltip>
+        <ng-md-icon icon="expand_more" style="fill: white"></ng-md-icon> 
+      </md-button>
+      <md-button class="md-icon-button" ng-if="!ctrl.expand" ng-click="ctrl.expand=true">
+        <md-tooltip md-direction="top">Expandir</md-tooltip>
+        <ng-md-icon icon="expand_less" style="fill: white"></ng-md-icon> 
+      </md-button>
+      <md-button class="md-icon-button" ng-click="ctrl.heading=null">
+        <md-tooltip md-direction="top">Cerrar</md-tooltip>
+        <ng-md-icon icon="close" style="fill: white"></ng-md-icon> 
+      </md-button>
+    </div>
+    <md-content flex md-scroll-y layout-padding ng-show="ctrl.expand">
+      <div layout="row" layout-xs="column" layout-sm="column">
+        <div layout="row" layout-xs="column" layout-sm="column" flex>
+          <div layout="column">
+            <md-card>
+              <md-table-container>
+                <table md-table>
+                  <tbody md-body>
+                    <tr md-row md-select="item" style="outline: 0;">
+                      <td md-cell class="bold-800">Seccion</td>
+                      <td md-cell>I</td>
+                      <td md-cell>Animales vivos y productos de reino animal</td>
+                    </tr>
+                    <tr md-row md-select="item" style="outline: 0;">
+                      <td md-cell class="bold-800">Capitulo</td>
+                      <td md-cell>01</td>
+                      <td md-cell>Animales vivos</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+            </md-card>
+            <div layout-align="center center" flex>
+              <md-button class="md-raised md-accent" aria-label="Agregar a favoritos">
+                <span ng-if="!ctrl.heading.isFav">Agregar a favoritos</span>
+                <span ng-if="ctrl.heading.isFav">Quitar de favoritos</span>
+              </md-button>
+
+            </div>
+          </div>
+
+          <div layout="column">
+            <md-card>
+              <md-table-container>
+                <table md-table>
+                  <tbody md-body>
+                    <tr md-row md-select="item" style="outline: 0;">
+                      <td md-cell class="bold-800">Gravamen</td>
+                      <td md-cell>8%</td>
+                    </tr>
+                    <tr md-row md-select="item" style="outline: 0;">
+                      <td md-cell class="bold-800">IVA</td>
+                      <td md-cell>16%</td>
+                    </tr>
+                    <tr md-row md-select="item" style="outline: 0;">
+                      <td md-cell class="bold-800">Reg. importacion</td>
+                      <td md-cell>Libre importacion</td>
+                    </tr>
+                    <tr md-row md-select="item">
+                      <td md-cell class="bold-800">Unidad comercial</td>
+                      <td md-cell>Unidades</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+            </md-card>
+            <div flex></div>
+          </div>
+        </div>
+        <md-progress-circular md-mode="indeterminate" flex layout-align="center center" ng-if="!ctrl.heading.tariffData.length" >
+        </md-progress-circular>
+          <ul flex ng-if="ctrl.heading.tariffData.length">
+            <li ng-repeat="item in ctrl.heading.tariffData">
+              <a href="javascript:;" ng-click="ctrl.showDetail(item, $event)">{{ item.title }}</a>
+            </li>
+          </ul>
+      </div>
+    </md-content>
+  </md-toolbar>
+</div>

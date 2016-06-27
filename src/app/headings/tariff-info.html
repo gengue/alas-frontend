@@ -1,0 +1,31 @@
+<md-dialog aria-label="{{ ctrl.tariff.title }}"  ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{ ctrl.heading.title }}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Cerrar" ng-click="ctrl.cancel()">
+          <ng-md-icon icon="close" style="fill: white;"></ng-md-icon> 
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Using .md-dialog-content class that sets the padding as the spec</h2>
+        <p>
+          It originated in Indian subcontinent (present day India and Pakistan) and Burma. It is the national fruit of India, Pakistan, and the Philippines, and the national tree of Bangladesh. In several cultures, its fruit and leaves are ritually used as floral decorations at weddings, public celebrations, and religious ceremonies.
+        </p>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
+        More on Wikipedia
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="ctrl.answer('not useful')">
+       Not Useful
+      </md-button>
+      <md-button ng-click="ctrl.answer('useful')">
+        Useful
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>

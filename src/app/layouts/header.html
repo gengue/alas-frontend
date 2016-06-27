@@ -1,0 +1,76 @@
+<md-toolbar class="md-whiteframe-2dp" ng-if="!ctrl.showSearchBar">
+  <div class="md-toolbar-tools">
+    <!--<h2>-->
+      <!--<span>ALAS</span>-->
+    <!--</h2>-->
+    <!--<span flex></span>-->
+
+    <div class="Header-tab" 
+         ng-click="ctrl.selectTab(tab)"
+         ng-class="{'is-active' : tab.isActive }"
+         ng-repeat="tab in ctrl.tabs">
+      <span class="Header-tab-content">{{ tab.title }}</span>      
+    </div>
+
+    <span flex></span>
+
+    <md-button aria-label="Busqueda" class="md-icon-button" ng-click="ctrl.showSearchBar = !ctrl.showSearchBar">
+      <ng-md-icon icon="search" style="fill: white"></ng-md-icon> 
+    </md-button>
+
+    <md-menu md-position-mode="target-right target">
+      <md-button aria-label="Configuracion" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+        <ng-md-icon icon="settings" style="fill: white"></ng-md-icon> 
+      </md-button>
+
+      <md-menu-content width="3">
+        <md-menu-item>
+          <md-button> Perfil </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button> Preferencias </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button> Cerrar sesion </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+</md-toolbar>
+
+<md-toolbar class="md-hue-1 md-whiteframe-2dp" ng-if="ctrl.showSearchBar">
+  <div class="md-toolbar-tools">
+    <md-button aria-label="Cancelar" class="md-icon-button" ng-click="ctrl.showSearchBar = false">
+      <ng-md-icon icon="arrow_back"></ng-md-icon> 
+    </md-button>
+
+    <h3 flex="10">Atras</h3>
+    <md-input-container md-theme="input" flex style="margin-top: 40px;">
+      <label>&nbsp;</label>
+      <input ng-model="ctrl.query" type="text" placeholder="Ingrese su busqueda" focus-me="ctrl.showSearchBar" id="searchInput">
+    </md-input-container> 
+
+    <md-button aria-label="Busqueda" class="md-icon-button" ng-click="ctrl.showSearchBar = !ctrl.showSearchBar">
+      <ng-md-icon icon="search"></ng-md-icon> 
+    </md-button>
+
+    <md-menu md-position-mode="target-right target">
+      <md-button aria-label="Configuracion" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+        <ng-md-icon icon="settings"></ng-md-icon> 
+      </md-button>
+
+      <md-menu-content width="3">
+        <md-menu-item>
+          <md-button> Perfil </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button> Preferencias </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button> Cerrar sesion </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+</md-toolbar>
+

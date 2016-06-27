@@ -1,0 +1,15 @@
+.Tariff-panel {
+    md-content {
+        max-height: $tariff_panel_h;
+        ul {
+            list-style-type: none;
+            font-size: 16px;
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+            li {
+                padding: 3px;     
+            }
+        }
+    }
+}

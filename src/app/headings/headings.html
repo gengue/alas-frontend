@@ -1,0 +1,34 @@
+<div layout-padding>
+  <h2>Arancel</h2>
+  <md-card>
+    <md-table-container>
+      <table md-table md-row-select ng-model="ctrl.selected" md-progress="ctrl.promise" id="headingsTable">
+        <thead md-head>
+          <tr md-row>
+            <th md-column>Partida</th>
+            <th md-column>Titulo</th>
+            <th md-column md-numeric> <md-tooltip md-direction="top">Gravamen</md-tooltip> Grav </th>
+            <th md-column md-numeric> Iva </th>
+            <th md-column> <md-tooltip md-direction="top">Unidad comercial</md-tooltip> U </th> 
+            <th md-column> <md-tooltip md-direction="top">Regimen de importacion</md-tooltip> RI </th> 
+          </tr>
+        </thead>
+        <tbody md-body md-no-checkbox="true">
+          <tr md-row md-select="item"  
+                     style="outline: 0;"
+                     ng-click="ctrl.showTariffInfo(item, $event)"
+                     md-select-id="id" 
+                     md-auto-select 
+                     ng-repeat="item in ctrl.data">
+            <td md-cell class="bold-800">{{ item.code }}</td>
+            <td md-cell>{{ item.title }}</td>
+            <td md-cell>{{ item.grav }}%</td>
+            <td md-cell>{{ item.iva }}%</td>
+            <td md-cell>{{ item.u }}</td>
+            <td md-cell>L</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+  </md-card>
+</div>

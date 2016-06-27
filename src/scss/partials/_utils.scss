@@ -1,0 +1,84 @@
+.padding-top-xs { padding-top: 5px; }
+
+.padding-top-s { padding-top: 10px; }
+
+.padding-top-m { padding-top: 15px; }
+
+.padding-top-l { padding-top: 20px; }
+
+.padding-top-xl { padding-top: 25px; }
+
+.padding-top-xxl { padding-top: 30px; }
+
+.margin-top-xs { margin-top: 5px; }
+
+.margin-top-s { margin-top: 10px; }
+
+.margin-top-m { margin-top: 15px; }
+
+.margin-top-l { margin-top: 20px; }
+
+.margin-top-xl { margin-top: 25px; }
+
+.margin-top-xxl { margin-top: 30px; }
+
+.margin-right-s { margin-right: 10px; }
+
+.margin-right-m { margin-right: 15px; }
+
+.margin-right-l { margin-right: 20px; }
+
+.margin-right-xl { margin-top: 25px; }
+
+.margin-left-s { margin-left: 10px; }
+
+.margin-left-m { margin-left: 15px; }
+
+.margin-left-l { margin-left: 20px; }
+
+.margin-left-xl { margin-top: 25px; }
+
+.bold-500{
+    font-weight: 500;
+}
+.bold-600{
+    font-weight: 600;
+}
+.bold-700{
+    font-weight: 700;
+}
+.bold-800 {
+    font-weight: 800;
+}
+
+.all-height {
+    height: 100%;
+    min-height: 100%;
+}
+
+.display-inline {
+    display: inline;
+}
+.text-right {
+    text-align: right;
+}
+
+.no-uldots {
+    list-style: none;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.animated {
+  -webkit-animation-duration: .6s;
+  animation-duration: .6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+table[md-table] .md-checkbox-column,
+table[md-table] .md-checkbox-cell {
+  display: none;
+}
